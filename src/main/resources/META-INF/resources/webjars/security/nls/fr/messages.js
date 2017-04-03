@@ -1,0 +1,3 @@
+define({
+	"service:security" : "Sécurité"
+});
