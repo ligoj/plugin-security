@@ -1,6 +1,6 @@
 machine:
   java:
-    version: openjdk8
+    version: openjdk9
 dependencies:
  override: 
   - mvn install -DskipTest=true -DskipITs=true
