@@ -1,3 +1,6 @@
+/*
+ * Licensed under MIT (https://github.com/ligoj/ligoj/blob/master/LICENSE)
+ */
 package org.ligoj.app.plugin.security;
 
 import java.io.IOException;
@@ -23,18 +26,18 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ContextConfiguration(locations = "classpath:/META-INF/spring/application-context-test.xml")
 @Rollback
 @Transactional
-public class SecurityPluginResourceTest extends AbstractAppTest {
+class SecurityPluginResourceTest extends AbstractAppTest {
 
 	@Autowired
 	private SecurityResource resource;
 
 	@BeforeEach
-	public void prepareData() throws IOException {
+	void prepareData() throws IOException {
 		persistEntities("csv", new Class[] { Node.class }, StandardCharsets.UTF_8.name());
 	}
 
 	@Test
-	public void getKey() {
+	void getKey() {
 		// Coverage only
 		Assertions.assertEquals("service:security", resource.getKey());
 	}
